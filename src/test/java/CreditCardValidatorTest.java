@@ -20,6 +20,12 @@ public class CreditCardValidatorTest {
     }
 
     @Test
+    public void wrongCharacters() {
+        assertFalse(cut.validate("4242424242424asd"));
+        assertFalse(cut.validate("!§$%&/()=?`´^#'*"));
+    }
+
+    @Test
     public void wrongLength() {
         assertFalse(cut.validate("799273987132"));
         assertFalse(cut.validate("79927398713646322"));

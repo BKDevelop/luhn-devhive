@@ -1,9 +1,14 @@
 public class CreditCardValidator {
 
     public boolean validate(String creditCardNumber) {
+        if(!(creditCardNumber.matches("^[0-9]+$"))){
+            return false;
+        }
+
         if(creditCardNumber.length() < 13 || creditCardNumber.length() > 16) {
             return false;
         }
+
         if(!(creditCardNumber.startsWith("4") ||
                 creditCardNumber.startsWith("5") ||
                 creditCardNumber.startsWith("37") ||
